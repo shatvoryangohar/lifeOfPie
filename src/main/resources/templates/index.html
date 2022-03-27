@@ -3,14 +3,14 @@
 	Resto by GetTemplates.co
 	URL: https://gettemplates.co
 -->
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Resto - Restaurant Bootstrap 4 Template by GetTemplates.co</title>
-    <meta name="description" content="Resto">
+    <title>Life of Pie staurant Bootstrap 4 Template by GetTemplates.co</title>
+    <meta name="description" content="Life of Pie">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- External CSS -->
@@ -68,9 +68,9 @@
 	<div class="boxed-page">
 		<nav id="navbar-header" class="navbar navbar-expand-lg">
     <div class="container">
-        <a class="navbar-brand navbar-brand-center d-flex align-items-center p-0 only-mobile" href="/">
-            <img src="/img/logo.png" alt="">
-        </a>
+            <a class="navbar-brand navbar-brand-center d-flex align-items-center p-0 only-mobile" href="/">
+        <img src="/img/logo.png" alt="">
+    </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="lnr lnr-menu"></span>
         </button>
@@ -84,7 +84,7 @@
                 </li>
                 <div class="d-flex flex-lg-row flex-column">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/" th:text="#{index.home}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
@@ -103,7 +103,7 @@
             </ul>
             
             <a class="navbar-brand navbar-brand-center d-flex align-items-center only-desktop" href="#">
-                <img src="/img/logo.png" alt="">
+                <img src="/static/img/logo.png" alt="">
             </a>
             <ul class="navbar-nav d-flex justify-content-between">
                 <div class="d-flex flex-lg-row flex-column">

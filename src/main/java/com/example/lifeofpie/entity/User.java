@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @Builder
 @Entity
 @javax.persistence.Table(name = "user")
-public class User {
+public class User<Role> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

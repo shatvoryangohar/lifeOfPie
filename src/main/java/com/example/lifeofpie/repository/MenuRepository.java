@@ -7,8 +7,6 @@ import java.util.List;
 
 public interface MenuRepository extends JpaRepository<Menu, Integer> {
 
-    @Override
-    List<Menu> findAllById(Iterable<Integer> integers);
 
     List<Menu> findAllByName(String name);
 

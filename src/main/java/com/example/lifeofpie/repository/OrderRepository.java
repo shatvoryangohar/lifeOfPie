@@ -10,12 +10,6 @@ import java.util.List;
 
 public interface OrderRepository extends JpaRepository<Order, Integer> {
 
-    @Override
-    List<Order> findAll();
-
-
-    List<Order> findAllByUserName(String name);
-
-
     List<Order> findAllByDateTime(Date dateTime);
-}
+    }
+

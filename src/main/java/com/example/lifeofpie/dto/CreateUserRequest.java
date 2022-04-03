@@ -1,9 +1,12 @@
 package com.example.lifeofpie.dto;
 
+import com.example.lifeofpie.entity.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.validation.constraints.*;
 
 @Data
@@ -12,17 +15,16 @@ import javax.validation.constraints.*;
 public class CreateUserRequest {
     @NotBlank(message = "Name should be not empty!!")
     private String name;
-    @NotBlank(message = "Surname should be not empty!!")
+    @NotBlank(message = "Surname should not be empty!!")
     private String surname;
-    @Pattern(regexp = "^(\\\\+\\\\d{1,3}( )?)?((\\\\(\\\\d{1,3}\\\\))|\\\\d{1,3})[- .]?\\\\d{3,4}[- .]?\\\\d{4}$")
-    @NotEmpty(message = "PhoneNumber should be not empty")
+
+    @NotEmpty(message = "PhoneNumber should not be empty")
     private String phone;
-    @NotBlank(message = "Email should be not empty!!")
-    @Email(regexp = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\\\.[A-Z]{2,6}$")
+    @NotBlank(message = "Email should not be empty!!")
+
     private String email;
-    @NotEmpty(message = "Password should be not empty!!")
+    @NotEmpty(message = "Password should not be empty!!")
     @Size(min = 3, max = 25, message = "Password length should be between 3 and 25")
     private String password;
-
 
 }

@@ -20,5 +20,5 @@ public class Table {
     private int id;
     private String name;
     private String picUrl;
-    private int MaxPerson;
+    private int maxPerson;
 }

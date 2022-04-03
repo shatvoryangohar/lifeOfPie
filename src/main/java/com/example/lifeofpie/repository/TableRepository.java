@@ -7,9 +7,6 @@ import java.util.List;
 
 public interface TableRepository extends JpaRepository<Table, Integer> {
 
-    @Override
-    List<Table> findAllById(Iterable<Integer> integers);
-
 
     List<Table> findAllByMaxPerson(Integer maxPerson);
 }

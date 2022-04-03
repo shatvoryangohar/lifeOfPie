@@ -7,8 +7,5 @@ import java.util.List;
 
 public interface CategoryRepository extends JpaRepository<Category, Integer> {
 
-    @Override
-    List<Category> findAllById(Iterable<Integer> integers);
-
     List<Category> findAllByName(String name);
 }

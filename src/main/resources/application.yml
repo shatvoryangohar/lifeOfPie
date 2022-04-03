@@ -1,0 +1,18 @@
+spring:
+  datasource:
+   url: jdbc:mysql://localhost:3306/life_of_pie?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+   username: root
+   password: root
+
+  mail:
+    host: smtp.gmail.com
+    username: 2021JavaForTest@gmail.com
+    password: forTest2021
+    port: 587
+    properties:
+     mail:
+      smtp:
+       aut: true
+       starttls:
+        enable: true
+

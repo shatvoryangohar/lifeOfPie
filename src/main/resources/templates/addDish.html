@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="width: 50%; float: left"> Add Dishes:<br>
+    <form action="/addDish" method="post" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="name"><br>
+        <input type="text" name="description" placeholder="description"><br>
+        <input type="text" name="price" placeholder="price"><br>
+        <input type="file" name="picture">
+        <label>Choose a category</label>
+        <select name="category.id"> <br>
+            <option th:each="category:${categories}" th:text="${category.getName()}" th:value="${category.id}"></option>
+        </select>
+        <input type="submit" value="Add"></form>
+</div>
+</body>
+</html>

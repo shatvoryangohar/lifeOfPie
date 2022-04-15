@@ -16,3 +16,6 @@ spring:
        starttls:
         enable: true
 
+lifeOfPie:
+  upload:
+    path: C:\\Users\\Lenovo\\IdeaProjects\\lifeOfPie\\images

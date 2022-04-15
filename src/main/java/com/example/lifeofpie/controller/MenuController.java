@@ -30,7 +30,7 @@ public class MenuController {
     public final MenuService menuService;
     public final CategoryService categoryService;
 
-    @Value("C:\\Users\\Lenovo\\IdeaProjects\\lifeOfPie\\images")
+    @Value("${lifeOfPie.upload.path}")
     private String imagePath;
 
 

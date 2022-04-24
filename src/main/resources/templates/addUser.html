@@ -13,7 +13,7 @@
         </li>
     </ul>
 </div>
-
+<span th:text="${message}" style="color: red"></span><br>
 <div class="form_wrapper">
     <div class="form_container">
         <div class="title_container">
@@ -21,32 +21,32 @@
         </div>
         <div class="row clearfix">
             <div class="">
-                <form  action="/addUser" method="Post">
+                <form action="/addUser" method="Post">
                     <div class="row clearfix">
                         <div class="col_half">
-                            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                                <input type="text" name="name" placeholder="First Name" />
+                            <div class="input_field"><span><i aria-hidden="true" class="fa fa-user"></i></span>
+                                <input type="text" name="name" placeholder="First Name"/>
                             </div>
                         </div>
                         <div class="col_half">
-                            <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                                <input type="text" name="surname" placeholder="Last Name" required />
+                            <div class="input_field"><span><i aria-hidden="true" class="fa fa-user"></i></span>
+                                <input type="text" name="surname" placeholder="Last Name" required/>
                             </div>
                         </div>
                     </div>
-                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-                        <input type="text" name="phone" placeholder="Phone Number" required />
+                    <div class="input_field"><span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                        <input type="text" name="phone" placeholder="Phone Number" required/>
                     </div>
-                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-                        <input type="email" name="email" placeholder="Email" required />
+                    <div class="input_field"><span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                        <input type="email" name="email" placeholder="Email" required/>
                     </div>
-                    <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                        <input type="password" name="password" placeholder="Password" required />
+                    <div class="input_field"><span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                        <input type="password" name="password" placeholder="Password" required/>
                     </div>
 
 
-                    <div class="input_field radio_option"> </div>
-                    <input class="button" type="submit" value="Register" />
+                    <div class="input_field radio_option"></div>
+                    <input class="button" type="submit" value="Register"/>
                 </form>
             </div>
         </div>
@@ -58,6 +58,7 @@
     font-size: 14px;
     background: #f2f2f2;
 }
+
 .clearfix:after {
     content: "";
     display: block;
@@ -65,6 +66,7 @@
     visibility: hidden;
     height: 0;
 }
+
 .form_wrapper {
     background: #fff;
     width: 400px;
@@ -88,41 +90,50 @@
     animation: expand 0.8s 0.6s ease-out forwards;
     opacity: 0;
 }
+
 .form_wrapper h2 {
     font-size: 1.5em;
     line-height: 1.5em;
     margin: 0;
 }
+
 .form_wrapper .title_container {
     text-align: center;
     padding-bottom: 15px;
 }
+
 .form_wrapper h3 {
     font-size: 1.1em;
     font-weight: normal;
     line-height: 1.5em;
     margin: 0;
 }
+
 .form_wrapper label {
     font-size: 12px;
 }
+
 .form_wrapper .row {
     margin: 10px -15px;
 }
+
 .form_wrapper .row > div {
     padding: 0 15px;
     box-sizing: border-box;
 }
+
 .form_wrapper .col_half {
     width: 50%;
     float: left;
 }
+
 .form_wrapper .input_field {
     position: relative;
     margin-bottom: 20px;
     -webkit-animation: bounce 0.6s ease-out;
     animation: bounce 0.6s ease-out;
 }
+
 .form_wrapper .input_field > span {
     position: absolute;
     left: 0;
@@ -133,12 +144,15 @@
     text-align: center;
     width: 30px;
 }
+
 .form_wrapper .input_field > span > i {
     padding-top: 10px;
 }
+
 .form_wrapper .textarea_field > span > i {
     padding-top: 10px;
 }
+
 .form_wrapper input[type="text"], .form_wrapper input[type="email"], .form_wrapper input[type="password"] {
     width: 100%;
     padding: 8px 10px 9px 35px;
@@ -151,9 +165,11 @@
     -ms-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
+
 .form_wrapper input[type="text"]:hover, .form_wrapper input[type="email"]:hover, .form_wrapper input[type="password"]:hover {
     background: #fafafa;
 }
+
 .form_wrapper input[type="text"]:focus, .form_wrapper input[type="email"]:focus, .form_wrapper input[type="password"]:focus {
     -webkit-box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
     -moz-box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
@@ -161,6 +177,7 @@
     border: 1px solid #f5ba1a;
     background: #fafafa;
 }
+
 .form_wrapper input[type="submit"] {
     background: #f5ba1a;
     height: 35px;
@@ -177,12 +194,15 @@
     -ms-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
+
 .form_wrapper input[type="submit"]:hover {
     background: #e1a70a;
 }
+
 .form_wrapper input[type="submit"]:focus {
     background: #e1a70a;
 }
+
 .form_wrapper input[type="checkbox"], .form_wrapper input[type="radio"] {
     border: 0;
     clip: rect(0 0 0 0);
@@ -193,13 +213,16 @@
     position: absolute;
     width: 1px;
 }
+
 .form_container .row .col_half.last {
     border-left: 1px solid #cccccc;
 }
+
 .checkbox_option label {
     margin-right: 1em;
     position: relative;
 }
+
 .checkbox_option label:before {
     content: "";
     display: inline-block;
@@ -213,6 +236,7 @@
     background-clip: content-box;
     transition: all 0.2s ease;
 }
+
 .checkbox_option label:after {
     border-right: 2px solid #000000;
     border-top: 2px solid #000000;
@@ -226,12 +250,15 @@
     width: 7px;
     display: none;
 }
+
 .checkbox_option input:hover + label:before {
     border-color: #000000;
 }
+
 .checkbox_option input:checked + label:before {
     border-color: #000000;
 }
+
 .checkbox_option input:checked + label:after {
     -moz-animation: check 0.8s ease 0s running;
     -webkit-animation: check 0.8s ease 0s running;
@@ -241,9 +268,11 @@
     height: 20px;
     border-color: #000000;
 }
+
 .radio_option label {
     margin-right: 1em;
 }
+
 .radio_option label:before {
     content: "";
     display: inline-block;
@@ -258,17 +287,21 @@
     background-clip: content-box;
     transition: all 0.2s ease;
 }
+
 .radio_option input:hover + label:before {
     border-color: #000000;
 }
+
 .radio_option input:checked + label:before {
     background-color: #000000;
     border-color: #000000;
 }
+
 .select_option {
     position: relative;
     width: 100%;
 }
+
 .select_option select {
     display: inline-block;
     width: 100%;
@@ -284,15 +317,18 @@
     -moz-appearance: none;
     transition: all 0.2s ease;
 }
+
 .select_option select::-ms-expand {
     display: none;
 }
+
 .select_option select:hover, .select_option select:focus {
     color: #000000;
     background: #fafafa;
     border-color: #000000;
     outline: none;
 }
+
 .select_arrow {
     position: absolute;
     top: calc(50% - 4px);
@@ -304,9 +340,11 @@
     border-style: solid;
     border-color: #7b7b7b transparent transparent transparent;
 }
+
 .select_option select:hover + .select_arrow, .select_option select:focus + .select_arrow {
     border-top-color: #000000;
 }
+
 .credit {
     position: relative;
     z-index: 1;
@@ -314,9 +352,11 @@
     padding: 15px;
     color: #f5ba1a;
 }
+
 .credit a {
     color: #e1a70a;
 }
+
 @-webkit-keyframes check {
     0% {
         height: 0;
@@ -331,6 +371,7 @@
         width: 7px;
     }
 }
+
 @keyframes check {
     0% {
         height: 0;
@@ -345,6 +386,7 @@
         width: 7px;
     }
 }
+
 @-webkit-keyframes expand {
     0% {
         -webkit-transform: scale3d(1, 0, 1);
@@ -364,6 +406,7 @@
         opacity: 1;
     }
 }
+
 @keyframes expand {
     0% {
         -webkit-transform: scale3d(1, 0, 1);
@@ -388,6 +431,7 @@
         opacity: 1;
     }
 }
+
 @-webkit-keyframes bounce {
     0% {
         -webkit-transform: translate3d(0, -25px, 0);
@@ -407,6 +451,7 @@
         opacity: 1;
     }
 }
+
 @keyframes bounce {
     0% {
         -webkit-transform: translate3d(0, -25px, 0);
@@ -431,26 +476,27 @@
         opacity: 1;
     }
 }
+
 @media (max-width: 600px) {
     .form_wrapper .col_half {
         width: 100%;
         float: none;
     }
+
     .bottom_row .col_half {
         width: 50%;
         float: left;
     }
+
     .form_container .row .col_half.last {
         border-left: none;
     }
+
     .remember_me {
         padding-bottom: 20px;
     }
 }
 </style>
-
-
-
 
 
 </body>

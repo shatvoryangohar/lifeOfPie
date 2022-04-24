@@ -1,13 +1,13 @@
 package com.example.lifeofpie.dto;
 
-import com.example.lifeofpie.entity.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.validation.constraints.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Data
 @AllArgsConstructor
@@ -17,7 +17,6 @@ public class CreateUserRequest {
     private String name;
     @NotBlank(message = "Surname should not be empty!!")
     private String surname;
-
     @NotEmpty(message = "PhoneNumber should not be empty")
     private String phone;
     @NotBlank(message = "Email should not be empty!!")

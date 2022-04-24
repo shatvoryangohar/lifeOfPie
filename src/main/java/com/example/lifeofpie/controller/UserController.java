@@ -1,8 +1,10 @@
 package com.example.lifeofpie.controller;
 
 import com.example.lifeofpie.dto.CreateUserRequest;
+import com.example.lifeofpie.entity.Order;
 import com.example.lifeofpie.entity.Role;
 import com.example.lifeofpie.entity.User;
+import com.example.lifeofpie.repository.OrderRepository;
 import com.example.lifeofpie.service.MailService;
 import com.example.lifeofpie.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -48,15 +50,21 @@ public class UserController {
             return "addUser";
         } else {
             User user = mapper.map(createUserRequest, User.class);
-            user.setActive(false);
-            user.setToken(UUID.randomUUID().toString());
-            user.setTokenCreatedDate(LocalDateTime.now());
-            user.setRole(Role.USER);
-            userService.saveUser(user);
-            mailService.sendHtmlEmail(user.getEmail(), "Welcome" + user.getName(), user,
-                    "http://localhost:8080/user/activate?token=" + user.getToken(), "verifyTemplate", locale);
+            Optional<User> byEmail = userService.findByEmail(user.getEmail());
+            if (byEmail.isPresent()) {
+                map.addAttribute("message", "This email exists, please input another email");
+                return "addUser";
+            } else {
+                user.setActive(false);
+                user.setToken(UUID.randomUUID().toString());
+                user.setTokenCreatedDate(LocalDateTime.now());
+                user.setRole(Role.USER);
+                userService.createUser(user);
+                mailService.sendHtmlEmail(user.getEmail(), "Welcome" + user.getName(), user,
+                        "http://localhost:8080/user/activate?token=" + user.getToken(), "verifyTemplate", locale);
+            }
         }
-        return "redirect:/";
+        return "redirect:/loginPage";
     }
 
     @GetMapping("/user/activate")
@@ -78,5 +86,16 @@ public class UserController {
         userService.saveUser(userFromDb);
         map.addAttribute("message", "User activated,please login");
         return "redirect:/";
+    }
+
+    @GetMapping("/admin")
+    public String admin() {
+        return "adminPage";
+    }
+
+    @GetMapping("/order")
+    public String order() {
+
+        return "orderPage";
     }
 }

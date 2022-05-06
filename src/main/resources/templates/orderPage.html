@@ -1,10 +1,57 @@
 <!DOCTYPE html>
-<html lang="en"xmlns:th=http://www.thymeleaf.org">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+></html>
 <head>
     <meta charset="UTF-8">
     <title>Order</title>
 </head>
+<style>
+    .pagination {
+        display: inline-block;
+    }
+
+    .pagination a {
+        color: black;
+        float: left;
+        padding: 5px 5px;
+        text-decoration: none;
+    }
+
+    .pagination a.active {
+        background-color: gray;
+        color: white;
+        border-radius: 2px;
+    }
+</style>
+
 <body>
+Orders
+<div th:if="${orderPage!=null}">
+    <table>
+        <tr>
+            <th>id</th>
+            <th>Date And Time</th>
+            <th>Person</th>
+            <th>Messages</th>
+            <th>user id</th>
+            <th>Table id</th>
+        </tr>
+        <tr th:each="order:${orderPage.content}">
+            <td th:text="${order.id}"></td>
+            <td th:text="${order.dateTime}"></td>
+            <td th:text="${order.person}"></td>
+            <td th:text="${order.message}"></td>
+            <td th:text="${order.user.id}"></td>
+            <td th:text="${order.table.id}"></td>
+            <td><a th:href="@{'/deletecompany/'+${order.id}}">delete</a></td>
+        </tr>
+    </table>
+    <div th:if="${orderPage.totalPages > 0}" class="pagination"
+         th:each="pageNumber : ${pageNumbers}">
+        <a th:href="@{/companies(size=${orderPage.size}, page=${pageNumber - 1})}"
+           th:text=${pageNumber}
+           th:class="${pageNumber==orderPage.number + 1} ? active"></a>
 
 </body>
 </html>

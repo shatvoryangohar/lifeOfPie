@@ -18,4 +18,4 @@ spring:
 
 lifeOfPie:
   upload:
-    path: C:\\Users\\Gohar\\IdeaProjects\\lifeOfPie\\src\\main\\resources\\static\\img\\
+    path: C:\Users\Lenovo\IdeaProjects\lifeOfPie\src\main\resources\static\img
